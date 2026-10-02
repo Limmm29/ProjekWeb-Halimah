@@ -103,6 +103,70 @@
         </div>
     </div>
 
+    <!-- Halaman tuduh pelaku -->
+    <div id="halamanTuduh" class="halaman">
+        <div class="halaman-tuduh">
+            <header>
+                <div class="logo">⚖️ MISTERI IKAN HILANG</div>
+
+                <div class="menu-header">
+                    <div class="status">
+                        <span id="nyawaTuduh">❤️ ❤️ ❤️</span>
+                        <span>⏱️ <span id="timerTuduh">60</span></span>
+                    </div>
+
+                    <button class="btn-home" onclick="kembaliAwal()">🏠 Beranda</button>
+                </div>
+            </header>
+
+            <main>
+                <div class="judul-tuduh">
+                    <p class="label">CASE #001</p>
+                    <h1>⚖️ TENTUKAN PELAKU</h1>
+                    <p>
+                        Semua petunjuk sudah kamu kumpulkan.<br>
+                        Sekarang gunakan hasil penyelidikanmu untuk menentukan
+                        siapa yang mencuri ikan.
+                    </p>
+                </div>
+
+                <section class="kotak-tuduhan">
+                    <h2>🔎 SIAPA YANG MENCURI IKAN?</h2>
+                    <p>Pilih salah satu tersangka di bawah ini.</p>
+
+                    <div class="pilihan-pelaku">
+                        <button onclick="tuduhPelaku('Kochi')">
+                            <img src="kochi.jpg" alt="Kochi">
+                            <strong>Kochi</strong>
+                            <small>TERSANGKA #01</small>
+                        </button>
+
+                        <button onclick="tuduhPelaku('Milo')">
+                            <img src="milo.jpg" alt="Milo">
+                            <strong>Milo</strong>
+                            <small>TERSANGKA #02</small>
+                        </button>
+
+                        <button onclick="tuduhPelaku('Mimi')">
+                            <img src="mimi.jpg" alt="Mimi">
+                            <strong>Mimi</strong>
+                            <small>TERSANGKA #03</small>
+                        </button>
+
+                        <button onclick="tuduhPelaku('Chino')">
+                            <img src="chino.jpg" alt="Chino">
+                            <strong>Chino</strong>
+                            <small>TERSANGKA #04</small>
+                        </button>
+                    </div>
+
+                    <div id="hasilTuduhan"></div>
+                </section>
+
+                <button class="btn-kembali" onclick="kembaliInvestigasi()">← Kembali ke Investigasi</button>
+            </main>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
