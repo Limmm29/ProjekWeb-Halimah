@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web - Game Interaktif</title>
+    <title>Misteri Ikan Hilang</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-    <div class="kucing">🐱 🐱 🐱</div>
-    
-    <h1>🐟 Misteri Ikan Hilang</h1>
-
-    <p class="cerita">
-        Oh tidak! 😿
-        <br>Ikan terakhir di rumah tiba-tiba menghilang!
-        <br>Ada empat kucing yang berada di rumah saat kejadian.
-    </p>
-    <p class="tantangan">🔎 Temukan siapa pencurinya!</p>
-    <br>
-
-    <button onclick="mulaiGame()">🎀 Mulai Game 🎀</button>
+    <!-- Halaman Beranda -->
+    <div id="halamanBeranda" class="halaman aktif">
+        <div class="container">
+            <div class="kucing">🐱 🐱 🐱</div>
+            <h1>🐟 Misteri Ikan Hilang</h1>
+            <p class="cerita">
+                Oh tidak! 😿
+                <br>
+                Ikan terakhir di rumah tiba-tiba menghilang!
+                <br>
+                Ada empat kucing yang berada di rumah saat kejadian.
+            </p>
+            <p class="tantangan">🔎 Temukan siapa pencurinya!</p>
+            <br>
+            <button onclick="mulaiGame()">🎀 Mulai Game 🎀</button>
+        </div>
     </div>
+
+    <!-- Halaman Investigasi -->
+    <div id="halamanInvestigasi" class="halaman">
+        <div class="halaman-investigasi">
+            <header>
+                <div class="logo">🔎 MISTERI IKAN HILANG</div>
+
+                <div class="menu-header">
+                    <div class="status">
+                        <span id="nyawa">❤️ ❤️ ❤️</span>
+                        <span>⏱️ <span id="timer">60</span></span>
+                    </div>
+
+                    <button class="btn-home" onclick="kembaliAwal()">🏠 Beranda</button>
+                </div>
+            </header>
 
     <script src="script.js"></script>
 </body>
