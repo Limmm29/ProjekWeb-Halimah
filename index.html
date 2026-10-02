@@ -39,11 +39,49 @@
                         <span>⏱️ <span id="timer">60</span></span>
                     </div>
 
-                    <button class="btn-home" onclick="kembaliAwal()">
-                        🏠 Beranda
-                    </button>
+                    <button class="btn-home" onclick="kembaliAwal()">🏠 Beranda</button>
                 </div>
             </header>
+
+            <main>
+                <div class="judul">
+                    <p class="label">CASE #001</p>
+                    <h1>🐟 Siapa yang Mencuri Ikan?</h1>
+                    <p>
+                        Ikan terakhir di rumah menghilang secara misterius.<br>
+                        Empat kucing berada di rumah saat kejadian.
+                    </p>
+                </div>
+
+                <h2>🔎 DAFTAR TERSANGKA</h2>
+
+                <div class="tersangka">
+                    <button onclick="pilihTersangka('Kochi')">
+                        <img src="kochi.jpg" alt="Kochi">
+                        <strong>Kochi</strong>
+                        <small>TERSANGKA #01</small>
+                    </button>
+
+                    <button onclick="pilihTersangka('Milo')">
+                        <img src="milo.jpg" alt="Milo">
+                        <strong>Milo</strong>
+                        <small>TERSANGKA #02</small>
+                    </button>
+
+                    <button onclick="pilihTersangka('Mimi')">
+                        <img src="mimi.jpg" alt="Mimi">
+                        <strong>Mimi</strong>
+                        <small>TERSANGKA #03</small>
+                    </button>
+
+                    <button onclick="pilihTersangka('Chino')">
+                        <img src="chino.jpg" alt="Chino">
+                        <strong>Chino</strong>
+                        <small>TERSANGKA #04</small>
+                    </button>
+                </div>
+
+                
 
     <script src="script.js"></script>
 </body>
