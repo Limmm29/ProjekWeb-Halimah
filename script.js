@@ -3,6 +3,12 @@ let waktu = 60;
 let timerGame;
 let timerTuduh;
 
+let buktiDitemukan = [];
+let tersangkaDipilih = "";
+let tersangkaSudahDipilih = [];
+
+const pelakuBenar = "Milo";
+
 // Pindah halaman
 function tampilkanHalaman(idHalaman) {
     document.querySelectorAll(".halaman").forEach(function(halaman) {
@@ -90,3 +96,116 @@ let dataTersangka = {
         bukti: "Ada jejak kaki yang mengarah ke teras. Wah, menarik nih 👀"
     }
 };
+
+function pilihTersangka(nama) {
+    tersangkaDipilih = nama;
+
+    let kucing = dataTersangka[nama];
+    let sudahTerbuka = buktiDitemukan.includes(nama);
+
+    document.getElementById("panelPenyelidikan").innerHTML = `
+        <div class="isi-panel">
+            <div class="foto-panel">
+                <img src="${kucing.foto}" alt="${nama}">
+            </div>
+
+            <div class="info-panel">
+                <span class="nomor">${kucing.nomor}</span>
+
+                <h3>${nama}</h3>
+
+                <p><strong>🐾 Sifat:</strong><br>${kucing.sifat}</p>
+                <p><strong>💬 Alibi:</strong><br>${kucing.alibi}</p>
+
+                <div class="area-kunci">
+                    <div
+                        class="kunci-box"
+                        ondragover="event.preventDefault()"
+                        ondrop="bukaPetunjuk(event)">
+                        <div class="gembok">
+                            ${sudahTerbuka ? "🔓" : "🔒"}
+                        </div>
+
+                        <h4>${sudahTerbuka
+                                ? "PETUNJUK SUDAH TERBUKA! 👀"
+                                : "PETUNJUK TERKUNCI"}
+                        </h4>
+
+                        ${sudahTerbuka
+                            ? `<div class="bukti-tersembunyi">
+                                    🔎 <strong>Petunjuk:</strong><br>
+                                    ${kucing.bukti}
+                                </div>`
+                            : `<p>EITSSS, belum boleh dibuka 😭</p>`}
+                    </div>
+
+                    ${sudahTerbuka
+                        ? ""
+                        : `<div
+                                class="kunci-drag"
+                                draggable="true"
+                                ondragstart="mulaiGeserKunci(event, '${nama}')">🔑</div>`}
+                </div>
+            </div>
+        </div>`;
+}
+
+// Drag kunci
+function mulaiGeserKunci(event, nama) {
+    event.dataTransfer.setData("namaKucing", nama);}
+
+// Buka petunjuk
+function bukaPetunjuk(event) {
+    event.preventDefault();
+
+    let nama = event.dataTransfer.getData("namaKucing");
+
+    if (!nama || buktiDitemukan.includes(nama)) {
+        return;}
+
+    let kucing = dataTersangka[nama];
+    let kunciBox = document.querySelector(".kunci-box");
+
+    kunciBox.innerHTML = `
+        <div class="gembok">🔓</div>
+        <h4>OHHH, PETUNJUK TERBUKA! 👀</h4>
+
+        <div class="bukti-tersembunyi">
+            🔎 <strong>Petunjuk:</strong><br>
+            ${kucing.bukti}
+        </div>`;
+
+    ambilBukti(nama);
+}
+
+// Simpan bukti
+function ambilBukti(nama) {
+    if (buktiDitemukan.includes(nama)) {
+        return;}
+
+    buktiDitemukan.push(nama);
+    tampilkanBukti();
+
+    alert("🔎 BUKTI DITEMUKAN!\n\n" + "Oke, ini bisa jadi petunjuk penting 👀");
+}
+
+// Tampilkan bukti
+function tampilkanBukti() {
+    let daftar = document.getElementById("daftarBukti");
+
+    daftar.innerHTML = "";
+
+    buktiDitemukan.forEach(function(nama) {
+        let teksBukti = dataTersangka[nama].bukti;
+
+        daftar.innerHTML += `
+            <div class="kartu-bukti">
+                <div class="ikon-bukti">🔎</div>
+
+                <div>
+                    <strong>Bukti ${nama}</strong>
+                    <p>${teksBukti}</p>
+                </div>
+            </div>`;
+    });
+}
