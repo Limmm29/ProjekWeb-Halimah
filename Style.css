@@ -672,3 +672,360 @@ h2 {
 .btn-kembali:hover {
     background: #eef0fa;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    body::before {
+        top: 15px;
+        font-size: 18px;
+    }
+
+    .halaman {
+        padding: 15px;
+    }
+
+    #halamanBeranda {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 420px;
+        padding: 35px 25px;
+        border-radius: 28px;
+    }
+
+    .kucing {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .container h1 {
+        font-size: 27px;
+        margin: 8px 0 15px;
+    }
+
+    .cerita {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .tantangan {
+        font-size: 14px;
+        padding: 9px 14px;
+        margin: 15px 0;
+    }
+
+    .container button {
+        padding: 13px 30px;
+        font-size: 16px;
+    }
+
+    header {
+        padding: 12px 15px;
+        border-radius: 15px;
+    }
+
+    .menu-header {
+        gap: 8px;
+    }
+
+    .btn-home {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .status {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    main {
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .judul p:last-child,
+    .judul-tuduh p:last-child {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 19px;
+        margin-top: 25px;
+    }
+
+    .tersangka {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .tersangka button {
+        padding: 8px;
+        border-radius: 15px;
+    }
+
+    .tersangka img {
+        height: 130px;
+        border-radius: 10px;
+    }
+
+    .tersangka strong {
+        font-size: 16px;
+    }
+
+    .tersangka small {
+        font-size: 10px;
+    }
+
+    .isi-panel {
+        flex-direction: column;
+        padding: 18px;
+        gap: 15px;
+    }
+
+    .foto-panel {
+        width: 180px;
+    }
+
+    .foto-panel img {
+        height: 180px;
+    }
+
+    .info-panel h3 {
+        font-size: 23px;
+    }
+
+    .info-panel p {
+        font-size: 14px;
+    }
+
+    .buku-bukti {
+        padding: 18px;
+    }
+
+    .daftar-bukti {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .kartu-bukti {
+        padding: 12px;
+    }
+
+    .ikon-bukti {
+        font-size: 24px;
+    }
+
+    .kartu-bukti strong {
+        font-size: 15px;
+    }
+
+    .kartu-bukti p {
+        font-size: 13px;
+    }
+
+    .btn-lanjut {
+        width: 100%;
+        padding: 13px 15px;
+        font-size: 14px;
+    }
+
+    .judul-tuduh h1 {
+        font-size: 27px;
+    }
+
+    .kotak-tuduhan {
+        padding: 18px;
+    }
+
+    .pilihan-pelaku {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .pilihan-pelaku button {
+        padding: 8px;
+        border-radius: 15px;
+    }
+
+    .pilihan-pelaku img {
+        height: 130px;
+    }
+
+    .pilihan-pelaku strong {
+        font-size: 16px;
+    }
+
+    .pilihan-pelaku small {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body::before {
+        font-size: 15px;
+        top: 10px;
+    }
+
+    .halaman {
+        padding: 10px;
+    }
+
+    #halamanBeranda {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 30px 20px;
+        border-width: 3px;
+        border-radius: 25px;
+    }
+
+    .kucing {
+        font-size: 36px;
+    }
+
+    .container h1 {
+        font-size: 23px;
+    }
+
+    .cerita {
+        font-size: 14px;
+    }
+
+    .tantangan {
+        font-size: 13px;
+    }
+
+    .container button {
+        padding: 12px 27px;
+        font-size: 15px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    .status {
+        font-size: 10px;
+        gap: 5px;
+    }
+
+    .btn-home {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .judul p:last-child,
+    .judul-tuduh p:last-child {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    .tersangka {
+        gap: 8px;
+    }
+
+    .tersangka img {
+        height: 105px;
+    }
+
+    .tersangka strong {
+        font-size: 14px;
+    }
+
+    .tersangka small {
+        font-size: 9px;
+    }
+
+    .foto-panel {
+        width: 150px;
+    }
+
+    .foto-panel img {
+        height: 150px;
+    }
+
+    .info-panel h3 {
+        font-size: 21px;
+    }
+
+    .info-panel p {
+        font-size: 13px;
+    }
+
+    .kunci-drag {
+        width: 55px;
+        height: 55px;
+        font-size: 27px;
+    }
+
+    .gembok {
+        font-size: 38px;
+    }
+
+    .buku-bukti {
+        padding: 15px;
+    }
+
+    .kartu-bukti {
+        gap: 10px;
+    }
+
+    .ikon-bukti {
+        font-size: 21px;
+    }
+
+    .kartu-bukti strong {
+        font-size: 14px;
+    }
+
+    .kartu-bukti p {
+        font-size: 12px;
+    }
+
+    .judul-tuduh h1 {
+        font-size: 23px;
+    }
+
+    .pilihan-pelaku {
+        gap: 8px;
+    }
+
+    .pilihan-pelaku img {
+        height: 105px;
+    }
+
+    .pilihan-pelaku strong {
+        font-size: 14px;
+    }
+
+    .pilihan-pelaku small {
+        font-size: 9px;
+    }
+}
+
+
