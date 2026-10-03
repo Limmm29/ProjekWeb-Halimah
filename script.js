@@ -381,3 +381,19 @@ function tuduhPelaku(nama) {
             </p>
         </div>`;
 }
+
+// Navigasi
+function kembaliAwal() {
+    clearInterval(timerGame);
+    clearInterval(timerTuduh);
+    tampilkanHalaman("halamanBeranda");
+}
+
+
+function kembaliInvestigasi() {
+    clearInterval(timerTuduh);
+    tampilkanHalaman("halamanInvestigasi");
+    document.getElementById("timer").textContent = waktu;
+
+    mulaiTimer();
+}
