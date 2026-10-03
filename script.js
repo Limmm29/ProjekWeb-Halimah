@@ -315,3 +315,10 @@ function tampilkanNyawa() {
     }
 }
 
+// Kunci pilihan
+function kunciSemuaPelaku() {
+    document.querySelectorAll(".pilihan-pelaku button").forEach(function(button) {
+        button.disabled = true;
+        button.classList.add("sudah-dipilih");
+    });
+}
