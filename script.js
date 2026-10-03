@@ -209,3 +209,48 @@ function tampilkanBukti() {
             </div>`;
     });
 }
+
+// Tampilkan bukti
+function tampilkanBukti() {
+    let daftar = document.getElementById("daftarBukti");
+
+    daftar.innerHTML = "";
+
+    buktiDitemukan.forEach(function(nama) {
+        let teksBukti = dataTersangka[nama].bukti;
+
+        daftar.innerHTML += `
+            <div class="kartu-bukti">
+                <div class="ikon-bukti">🔎</div>
+
+                <div>
+                    <strong>Bukti ${nama}</strong>
+                    <p>${teksBukti}</p>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Timer investigasi
+function mulaiTimer() {
+    clearInterval(timerGame);
+
+    timerGame = setInterval(function() {
+        waktu--;
+
+        document.getElementById("timer").textContent = waktu;
+
+        if (waktu <= 0) {
+            clearInterval(timerGame);
+
+            alert(
+                "⏰ WAKTUNYA HABIS!\n\n" +
+                "Yahh, kasusnya belum kelar 😭\n" +
+                "Coba lagi dari awal!"
+            );
+
+            kembaliAwal();
+        }
+    }, 1000);
+}
