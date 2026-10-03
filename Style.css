@@ -450,3 +450,84 @@ h2 {
         transform: translateY(0);
     }
 }
+
+/* Kunci */
+.kunci-box {
+    border: 3px dashed #9a94c4;
+    background: #eef0fa;
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.kunci-box:hover {
+    background: #e4e8fa;
+    transform: scale(1.02);
+}
+
+.gembok {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.kunci-box p {
+    margin: 5px 0 0;
+    color: #777b91;
+    font-size: 13px;
+}
+
+.kunci-drag {
+    width: 65px;
+    height: 65px;
+    margin: 15px auto;
+    background: #f4d878;
+    border: 3px solid #d3b95e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 5px 0 #b8a04d;
+    transition: 0.2s;
+}
+
+.kunci-drag:hover {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.kunci-drag:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+.lanjut-area {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.lanjut-area p {
+    color: #50566e;
+    margin-bottom: 12px;
+}
+
+.btn-lanjut {
+    background: linear-gradient(90deg, #59638f, #7772a3);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 20px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #424e78;
+    transition: 0.2s;
+}
+
+.btn-lanjut:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #424e78;
+}
