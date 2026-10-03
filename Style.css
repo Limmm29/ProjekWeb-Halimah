@@ -531,3 +531,144 @@ h2 {
     transform: translateY(-3px);
     box-shadow: 0 8px 0 #424e78;
 }
+
+/* Halaman Tuduh */
+.judul-tuduh {
+    text-align: center;
+}
+
+.judul-tuduh h1 {
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.judul-tuduh p:last-child {
+    color: #50566e;
+    line-height: 1.7;
+}
+
+.kotak-tuduhan {
+    margin-top: 35px;
+    background: #fffdf5;
+    border: 3px solid #6f79a8;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 7px 0 #59638f;
+}
+
+.kotak-tuduhan h2 {
+    margin-top: 0;
+    color: #59638f;
+}
+
+.kotak-tuduhan > p {
+    color: #666b82;
+}
+
+.pilihan-pelaku {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.pilihan-pelaku button {
+    background: #eef5ff;
+    border: 3px solid #9a94c4;
+    border-radius: 20px;
+    padding: 12px;
+    cursor: pointer;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #3f4563;
+    box-shadow: 0 6px 0 #7772a3;
+    transition: 0.2s;
+}
+
+.pilihan-pelaku img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pilihan-pelaku strong {
+    display: block;
+    font-size: 20px;
+}
+
+.pilihan-pelaku small {
+    display: block;
+    margin-top: 5px;
+    color: #777b91;
+    font-size: 12px;
+}
+
+.pilihan-pelaku button:hover {
+    transform: translateY(-6px);
+    background: #e3ecff;
+    box-shadow: 0 11px 0 #7772a3;
+}
+
+.pilihan-pelaku button:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #7772a3;
+}
+
+.hasil {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 18px;
+    font-weight: bold;
+}
+
+.hasil.benar {
+    background: #ddf2e8;
+    border: 2px solid #79b99b;
+    color: #315d48;
+}
+
+.hasil.salah {
+    background: #f1e5e5;
+    border: 2px solid #c48d8d;
+    color: #704444;
+}
+
+.hasil h3 {
+    margin-top: 0;
+}
+
+.hasil button {
+    margin-top: 10px;
+    background: #59638f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 18px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hasil button:hover {
+    background: #7772a3;
+}
+
+.btn-kembali {
+    display: block;
+    margin: 30px auto;
+    background: #fffdf5;
+    color: #59638f;
+    border: 2px solid #7772a3;
+    padding: 11px 20px;
+    border-radius: 18px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-kembali:hover {
+    background: #eef0fa;
+}
