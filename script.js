@@ -210,35 +210,12 @@ function tampilkanBukti() {
     });
 }
 
-// Tampilkan bukti
-function tampilkanBukti() {
-    let daftar = document.getElementById("daftarBukti");
-
-    daftar.innerHTML = "";
-
-    buktiDitemukan.forEach(function(nama) {
-        let teksBukti = dataTersangka[nama].bukti;
-
-        daftar.innerHTML += `
-            <div class="kartu-bukti">
-                <div class="ikon-bukti">🔎</div>
-
-                <div>
-                    <strong>Bukti ${nama}</strong>
-                    <p>${teksBukti}</p>
-                </div>
-            </div>
-        `;
-    });
-}
-
 // Timer investigasi
 function mulaiTimer() {
     clearInterval(timerGame);
 
     timerGame = setInterval(function() {
         waktu--;
-
         document.getElementById("timer").textContent = waktu;
 
         if (waktu <= 0) {
@@ -247,8 +224,7 @@ function mulaiTimer() {
             alert(
                 "⏰ WAKTUNYA HABIS!\n\n" +
                 "Yahh, kasusnya belum kelar 😭\n" +
-                "Coba lagi dari awal!"
-            );
+                "Coba lagi dari awal!");
 
             kembaliAwal();
         }
@@ -261,7 +237,6 @@ function mulaiTimerTuduh() {
 
     timerTuduh = setInterval(function() {
         waktu--;
-
         document.getElementById("timerTuduh").textContent = waktu;
 
         if (waktu <= 0) {
@@ -270,8 +245,7 @@ function mulaiTimerTuduh() {
             alert(
                 "⏰ WAKTUNYA HABIS!\n\n" +
                 "Yahh, pelakunya belum ketemu 😭\n" +
-                "Coba lagi dari awal!"
-            );
+                "Coba lagi dari awal!");
 
             mulaiGame();
         }
@@ -284,8 +258,7 @@ function lanjutMenuduh() {
         alert(
             "EITSSS 😭\n\n" +
             "Buktinya belum lengkap!\n" +
-            "Cari semua petunjuk dulu sebelum mulai menuduh 🔎"
-        );
+            "Cari semua petunjuk dulu sebelum mulai menuduh 🔎");
 
         return;
     }
@@ -296,7 +269,6 @@ function lanjutMenuduh() {
     document.getElementById("timerTuduh").textContent = waktu;
 
     tampilkanHalaman("halamanTuduh");
-
     mulaiTimerTuduh();
 }
 
@@ -321,4 +293,91 @@ function kunciSemuaPelaku() {
         button.disabled = true;
         button.classList.add("sudah-dipilih");
     });
+}
+
+// Tuduh pelaku
+function tuduhPelaku(nama) {
+    if (tersangkaSudahDipilih.includes(nama)) {
+        return;}
+
+    tersangkaSudahDipilih.push(nama);
+
+    document.querySelectorAll(".pilihan-pelaku button").forEach(function(button) {
+        let namaKucing = button.querySelector("strong").textContent;
+
+        if (namaKucing === nama) {
+            button.disabled = true;
+            button.classList.add("sudah-dipilih");}
+    });
+
+    let hasil = document.getElementById("hasilTuduhan");
+
+    // Tebakan benar
+    if (nama === pelakuBenar) {
+        clearInterval(timerTuduh);
+        kunciSemuaPelaku();
+
+        hasil.innerHTML = `
+            <div class="hasil benar">
+                <div class="ikon-hasil">🎉</div>
+
+                <h3>CASE CLOSED! 🔎✨</h3>
+                <p>AKHIRNYA KETEMU JUGA! 😭</p>
+
+                <div class="pelaku-hasil">🐱 <strong>${nama}</strong></div>
+
+                <p>
+                    Semua petunjuk akhirnya nyambung.
+                    Kamu berhasil memecahkan misteri ikan hilang! 🐟
+                </p>
+
+                <button onclick="mulaiGame()">🔄 Main Lagi</button>
+            </div>`;
+
+        return;
+    }
+
+    // Tebakan salah
+    if (nyawa > 0) {nyawa--;}
+
+    tampilkanNyawa();
+
+    // Nyawa habis
+    if (nyawa <= 0) {
+        clearInterval(timerTuduh);
+        kunciSemuaPelaku();
+
+        hasil.innerHTML = `
+            <div class="hasil salah">
+                <div class="ikon-hasil">💔</div>
+
+                <h3>YAHHH, KESEMPATANNYA HABIS 😭</h3>
+                <p>Tiga kesempatan sudah kepakai...</p>
+
+                <div class="sisa-kesempatan">🖤 Kesempatan tersisa: <strong>0</strong></div>
+
+                <p>Tapi pelakunya masih bebas berkeliaran 🐈‍⬛</p>
+
+                <button onclick="mulaiGame()">🔄 Mulai Lagi 🔥</button>
+            </div>`;
+
+        return;
+    }
+
+    // Salah tapi masih ada nyawa
+    hasil.innerHTML = `
+        <div class="hasil salah">
+            <div class="ikon-hasil">😭</div>
+
+            <h3>YAHH, BUKAN DIA!</h3>
+            <p>${nama} ternyata nggak bersalah.</p>
+
+            <div class="sisa-kesempatan">❤️ Kesempatan tersisa: <strong>${nyawa}</strong></div>
+
+            <p>
+                Tenang, masih ada kesempatan 👀
+                <br>
+                Cari tersangka lain dan jangan sampai salah lagi!
+            </p>
+        </div>`;
 }
