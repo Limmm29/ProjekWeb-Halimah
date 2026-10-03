@@ -254,3 +254,64 @@ function mulaiTimer() {
         }
     }, 1000);
 }
+
+// Timer tuduh
+function mulaiTimerTuduh() {
+    clearInterval(timerTuduh);
+
+    timerTuduh = setInterval(function() {
+        waktu--;
+
+        document.getElementById("timerTuduh").textContent = waktu;
+
+        if (waktu <= 0) {
+            clearInterval(timerTuduh);
+
+            alert(
+                "⏰ WAKTUNYA HABIS!\n\n" +
+                "Yahh, pelakunya belum ketemu 😭\n" +
+                "Coba lagi dari awal!"
+            );
+
+            mulaiGame();
+        }
+    }, 1000);
+}
+
+// Lanjut menuduh
+function lanjutMenuduh() {
+    if (buktiDitemukan.length < 4) {
+        alert(
+            "EITSSS 😭\n\n" +
+            "Buktinya belum lengkap!\n" +
+            "Cari semua petunjuk dulu sebelum mulai menuduh 🔎"
+        );
+
+        return;
+    }
+
+    clearInterval(timerGame);
+
+    tampilkanNyawa();
+    document.getElementById("timerTuduh").textContent = waktu;
+
+    tampilkanHalaman("halamanTuduh");
+
+    mulaiTimerTuduh();
+}
+
+// Tampilkan nyawa
+function tampilkanNyawa() {
+    let tempatNyawa = document.getElementById("nyawaTuduh");
+
+    tempatNyawa.innerHTML = "";
+
+    for (let i = 0; i < 3; i++) {
+        if (i < nyawa) {
+            tempatNyawa.innerHTML += `<span>❤️</span>`;
+        } else {
+            tempatNyawa.innerHTML += `<span>🖤</span>`;
+        }
+    }
+}
+
