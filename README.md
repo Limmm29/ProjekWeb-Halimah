@@ -96,6 +96,9 @@ JavaScript digunakan untuk membuat game menjadi interaktif. Beberapa fungsi Java
 # Live Demo:
 https://limmm29.github.io/ProjekWeb-Halimah/
 
+# Link Figma:
+https://www.figma.com/design/Qoydh7IpvbdLgMx0jz67Fx/Desain-Figma---Misteri-Ikan-Hilang?node-id=0-1&t=tAqlmJv7RDt4wTD8-1 
+
 # Alur Permainan
 Alur permainan secara sederhana adalah:
 Beranda → Mulai Game → Investigasi → Pilih Tersangka → Cari Petunjuk → Kumpulkan Bukti → Tentukan Pelaku → Lihat Hasil
