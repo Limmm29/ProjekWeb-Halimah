@@ -48,6 +48,10 @@ body {
 
 #halamanBeranda.aktif {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    postion: relative
 }
 
 .container {
@@ -97,6 +101,17 @@ h1 {
     border-radius: 20px;
     font-weight: bold;
     margin: 20px 0;
+}
+
+#halamanBeranda footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #59638f;
+    font-size: 13px;
 }
 
 /* Tombol */

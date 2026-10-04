@@ -63,44 +63,48 @@ function mulaiGame() {
 }
 
 // Data tersangka
-let dataTersangka = {
-    Kochi: {
+// Data tersangka
+let dataTersangka = [
+    {
+        nama: "Kochi",
         foto: "kochi.jpg",
         nomor: "TERSANGKA #01",
         sifat: "Kucing yang suka main-main di sekitar rumah.",
         alibi: "Kochi ngaku lagi tidur santai di ruang tamu.",
         bukti: "Ada jejak kaki misterius di dekat ruang tamu 👀"
     },
-
-    Milo: {
+    {
+        nama: "Milo",
         foto: "milo.jpg",
         nomor: "TERSANGKA #02",
         sifat: "Kucing yang sering nongkrong di sekitar dapur.",
         alibi: "Milo bilang dirinya lagi di halaman.",
         bukti: "Ada bekas sisik ikan di dekat tempat Milo bermain. Hmm... mencurigakan 👀"
     },
-
-    Mimi: {
+    {
+        nama: "Mimi",
         foto: "mimi.jpg",
         nomor: "TERSANGKA #03",
         sifat: "Kucing yang lebih sering rebahan di kamar.",
         alibi: "Mimi ngaku lagi tidur di kamar.",
         bukti: "Belum ada bukti yang benar-benar mengarah ke Mimi."
     },
-
-    Chino: {
+    {
+        nama: "Chino",
         foto: "chino.jpg",
         nomor: "TERSANGKA #04",
         sifat: "Kucing yang hobi keliling rumah.",
         alibi: "Chino bilang lagi nongkrong di teras.",
         bukti: "Ada jejak kaki yang mengarah ke teras. Wah, menarik nih 👀"
     }
-};
+];
 
 function pilihTersangka(nama) {
     tersangkaDipilih = nama;
 
-    let kucing = dataTersangka[nama];
+    let kucing = dataTersangka.find(function(kucing) {
+        return kucing.nama === nama;});
+
     let sudahTerbuka = buktiDitemukan.includes(nama);
 
     document.getElementById("panelPenyelidikan").innerHTML = `
@@ -163,7 +167,9 @@ function bukaPetunjuk(event) {
     if (!nama || buktiDitemukan.includes(nama)) {
         return;}
 
-    let kucing = dataTersangka[nama];
+    let kucing = dataTersangka.find(function(kucing) {
+        return kucing.nama === nama;});
+
     let kunciBox = document.querySelector(".kunci-box");
 
     kunciBox.innerHTML = `
@@ -196,7 +202,10 @@ function tampilkanBukti() {
     daftar.innerHTML = "";
 
     buktiDitemukan.forEach(function(nama) {
-        let teksBukti = dataTersangka[nama].bukti;
+        let kucing = dataTersangka.find(function(kucing) {
+            return kucing.nama === nama;
+        });
+        let teksBukti = kucing.bukti;
 
         daftar.innerHTML += `
             <div class="kartu-bukti">
